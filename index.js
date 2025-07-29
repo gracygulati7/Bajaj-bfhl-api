@@ -83,8 +83,28 @@ app.post('/bfhl', (req, res) => {
 app.get('/', (req, res) => res.send("BFHL API Running"));
 
 app.get('/bfhl', (req, res) => {
-  res.send("This is the BFHL API. Please use POST requests to interact.");
+  res.send(
+    `BFHL API Endpoint:
+    
+    Method: POST
+    URL: /bfhl
+    
+    Description:
+    This endpoint accepts a JSON object with a 'data' array containing strings. It separates:
+    - Even numbers
+    - Odd numbers
+    - Alphabets (converted to uppercase)
+    - Special characters
+    - Computes sum of all numeric values (as a string)
+    - Returns reversed concatenated alphabets in alternating caps
+    
+    Required Request Format:
+    {
+      "data": ["a", "1", "334", "4", "R", "$"]
+    }
+    
+    Please use a POST request with Content-Type: application/json.`
+  );
 });
-
 
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
