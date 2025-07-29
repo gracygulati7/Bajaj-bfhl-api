@@ -1,32 +1,32 @@
 # Bajaj BFHL API
 
-This is a REST API built for the Bajaj Campus Hiring assignment (Full Stack Round) using Node.js and Express.
+This is a RESTful API developed for the Bajaj Campus Hiring Assignment (Full Stack Round) using Node.js and Express.
 
 ## Hosted API Endpoint
 
-`https://bajaj-bfhl-api-fexd.onrender.com/bfhl`  
-**Method**: POST
+**URL:** [https://bajaj-bfhl-api-fexd.onrender.com/bfhl](https://bajaj-bfhl-api-fexd.onrender.com/bfhl)  
+**Method:** POST
 
 ## Features
 
-- Extracts and returns:
-  - Even numbers
-  - Odd numbers
-  - Alphabets (uppercase)
+- Parses an input array of strings and returns:
+  - Even numbers (as strings)
+  - Odd numbers (as strings)
+  - Alphabets (converted to uppercase)
   - Special characters
-  - Sum of all numbers (as string)
-  - Reversed concatenated alphabets in alternating caps
-- Includes personal user details
+  - Sum of all numeric values (as a string)
+  - Concatenated alphabets in reverse order with alternating capitalization
+- Includes user-specific metadata: `user_id`, `email`, and `roll_number`
 
-## Sample Input (POST Body)
+## Request Example (POST Body)
 
 ```json
 {
   "data": ["a", "1", "334", "4", "R", "$"]
 }
-```
+````
 
-## Sample Output
+## Response Example
 
 ```json
 {
@@ -43,7 +43,16 @@ This is a REST API built for the Bajaj Campus Hiring assignment (Full Stack Roun
 }
 ```
 
+## Routes Summary
+
+| Route   | Method | Description                           |
+| ------- | ------ | ------------------------------------- |
+| `/`     | GET    | Base route with a welcome message     |
+| `/bfhl` | GET    | Info route explaining the endpoint    |
+| `/bfhl` | POST   | Primary logic as per assignment specifications |
+
 ## Tech Stack
-- Node.js
-- Express.js
-- Render (for hosting)
+
+* Node.js
+* Express.js
+* Render (Hosting)
