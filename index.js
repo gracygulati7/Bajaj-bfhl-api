@@ -18,7 +18,6 @@ app.post('/bfhl', (req, res) => {
   try {
     const inputData = req.body.data;
 
-    // Check if 'data' field exists and is an array
     if (!inputData || !Array.isArray(inputData)) {
       return res.status(400).json({
         is_success: false,
@@ -35,7 +34,6 @@ app.post('/bfhl', (req, res) => {
 
     inputData.forEach((item) => {
       if (typeof item !== "string" && typeof item !== "number") {
-        // Skip invalid types (e.g., objects, null, undefined)
         return;
       }
 
